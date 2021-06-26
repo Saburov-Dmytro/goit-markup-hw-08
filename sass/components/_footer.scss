@@ -1,0 +1,142 @@
+/* Подвал */
+
+.footer {
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 252px;
+
+  padding-top: 60px;
+
+  &__container {
+    display: flex;
+    align-items: baseline;
+  }
+
+  &__titles {
+    @extend %block-titles;
+
+    margin-bottom: 20px;
+
+    color: $white-additional-color;
+
+    text-align: left;
+  }
+
+  &__logo {
+    @extend %logo;
+    display: block;
+    margin-bottom: 20px;
+
+    color: $white-additional-color;
+  }
+}
+
+.address {
+  font-style: normal;
+
+  &__map {
+    @extend %text-section;
+
+    display: block;
+    margin-bottom: 9px;
+
+    color: $white-additional-color;
+  }
+
+  &__email {
+    @extend %text-section;
+
+    display: block;
+    margin-bottom: 9px;
+
+    color: $mailtel-logo-footer;
+  }
+
+  &__tel {
+    @extend %text-section;
+
+    color: $mailtel-logo-footer;
+  }
+}
+
+.address__email {
+  @extend %text-section;
+
+  &:hover,
+  &:focus {
+    color: $accent-color;
+  }
+}
+
+.address__tel {
+  @extend %text-section;
+
+  &:hover,
+  &:focus {
+    color: $accent-color;
+  }
+}
+
+.footer-sn {
+  margin-left: 70px;
+
+  &__set {
+    display: flex;
+  }
+
+  &__circle-button {
+    background-color: $footer-circle-btn-color;
+    color: $white-additional-color;
+  }
+}
+
+.footer-sn__items {
+  margin-right: 10px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+/* Блок с подпиской */
+
+.footer-subscribe {
+  margin-left: 93px;
+
+  &__input {
+    width: 358px;
+
+    padding: 0;
+    padding-left: 16px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    background-color: $hero-footer-color;
+    @include border($footer-input-border);
+
+    border-radius: 4px;
+    color: $mailtel-logo-footer;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.25;
+    letter-spacing: 0.03em;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-left: 12px;
+  }
+}
+
+.footer-subscribe__set {
+  display: flex;
+  align-items: center;
+
+  & input::placeholder {
+    color: $mailtel-logo-footer;
+  }
+}
