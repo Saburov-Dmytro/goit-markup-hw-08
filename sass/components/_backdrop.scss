@@ -9,6 +9,8 @@
   background-color: $backdrop-bg-color;
 
   opacity: 1;
+  
+  overflow-y: scroll;  
 
   @include transition(opacity);
 
@@ -17,7 +19,11 @@
     pointer-events: none;
   }
 
-  &.is-hidden>.modal {
+  &.is-hidden > .modal {
     opacity: 0;
+  }
+
+  @media screen and (max-width: $mobile) {
+    padding: 15px;
   }
 }

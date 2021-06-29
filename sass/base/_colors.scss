@@ -1,0 +1,15 @@
+/* Фоновые цвета */
+
+.header {
+  background-color: $main-background-color;
+  border-bottom: 1px solid #ececec;
+}
+
+.hero,
+.footer {
+  background-color: $hero-footer-color;
+}
+
+.team {
+  background-color: $additional-background-color;
+}

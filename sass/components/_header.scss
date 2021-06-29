@@ -1,4 +1,4 @@
-.heder__container {
+.header__container {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -12,7 +12,7 @@
 .site-menu {
   display: flex;
 
-  &__item+&__item {
+  &__item + &__item {
     margin-left: 50px;
   }
 }
@@ -21,7 +21,12 @@
   position: relative;
   color: $title-text-color;
 
-  @extend %text-header;
+  padding-top: 32px;
+  padding-bottom: 32px;
+
+  @include transition(color);
+
+  @include text-header();
 
   &:hover,
   &:focus {
@@ -47,13 +52,24 @@
 .header__contacts {
   display: flex;
 
-  &__item+&__item {
-    margin-left: 50px;
-  }
-
   &__icon {
     margin-right: 10px;
     fill: currentColor;
+  }
+
+  @media screen and (min-width: $tablet) and (max-width: $desktop - 1px) {
+    flex-direction: column;
+    padding-top: 21px;
+    padding-bottom: 21px;
+    &__item:first-child { 
+      margin-bottom: 10px;
+    }
+  }
+
+  @media screen and (min-width: $desktop) {
+    &__item + &__item {
+      margin-left: 50px;
+    }
   }
 }
 
@@ -61,20 +77,33 @@
   display: flex;
   align-items: center;
 
+  
+
   color: $text-color;
 
-  @extend %text-header;
+  @include transition(color);
+  @include text-header();
 
   &:hover,
   &:focus {
     color: $accent-color;
   }
+
+  @media screen and (min-width: $tablet) and (max-width: $desktop - 1px) {
+    font-size: 12px;
+    line-height: 1.166;
+  }
+
+  @media screen and (min-width: $desktop) {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
 }
 
 .logo {
   margin-right: 93px;
-  padding-top: 25px;
-  padding-bottom: 25px;
+  padding-top: 16px;
+  padding-bottom: 16px;
 
   color: $logo-color;
 
@@ -83,4 +112,55 @@
   &__accent-text {
     color: $accent-color;
   }
+
+  @media screen and (min-width: $tablet) and (max-width: $desktop - 1px) {
+    padding-top: 26px;
+    padding-bottom: 26px;
+    margin-right: 88px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    font-size: 26px;
+    line-height: 1.19;
+  }
+}
+
+.full-menu {
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-between;
+
+  @media screen and (max-width: $tablet - 1px) {
+    display: none;
+  }
+}
+
+.menu-toggle {
+  min-height: 40px;
+  min-width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  color: #000;
+
+   &:hover, &:focus {
+    color: $accent-color;
+  }
+
+  @media screen and (min-width: $tablet) {
+    display: none;
+  }
+}
+
+.icon-menu {
+  fill: currentColor;
 }

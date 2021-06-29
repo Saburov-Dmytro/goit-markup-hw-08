@@ -22,50 +22,63 @@
       <!--Контейнер для шапки сайта-->
       <div class="container header__container">
         <!--Навигация-->
-        <nav class="header__nav">
-          <a href="./index.html" class="logo">
-            <span class="logo__accent-text">Web</span>Studio
-          </a>
+        <a href="./index.html" class="logo">
+          <span class="logo__accent-text">Web</span>Studio
+        </a>
+        <button
+          class="menu-toggle js-open-menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <svg width="40" height="40" class="icon-menu">
+            <use href="./images/icons.svg#icon-menu"></use>
+          </svg>
+        </button>
+        <div class="full-menu">
+          <nav class="header__nav">
+            <ul class="site-menu">
+              <li class="site-menu__item">
+                <a href="./index.html" class="site-menu__link">Студия</a>
+              </li>
 
-          <ul class="site-menu">
-            <li class="site-menu__item">
-              <a href="./index.html" class="site-menu__link">Студия</a>
-            </li>
+              <li class="site-menu__item">
+                <a
+                  href="./portfolio.html"
+                  class="site-menu__link site-menu__link--current"
+                  >Портфолио</a
+                >
+              </li>
 
-            <li class="site-menu__item">
+              <li class="site-menu__item">
+                <a href="" class="site-menu__link">Контакты</a>
+              </li>
+            </ul>
+          </nav>
+
+          <!--Kонтакы-->
+          <ul class="header__contacts">
+            <li class="header__contacts__item">
               <a
-                href="./portfolio.html"
-                class="site-menu__link site-menu__link--current"
-                >Портфолио</a
+                href="mailto:info@devstudio.com"
+                class="header__contacts__link"
               >
+                <svg class="header__contacts__icon" width="16" height="12">
+                  <use href="./images/icons.svg#icon-envelope"></use>
+                </svg>
+                info@devstudio.com
+              </a>
             </li>
 
-            <li class="site-menu__item">
-              <a href="" class="site-menu__link">Контакты</a>
+            <li class="header__contacts__item">
+              <a href="tel:+380961111111" class="header__contacts__link">
+                <svg class="header__contacts__icon" width="10" height="16">
+                  <use href="./images/icons.svg#icon-smartphone"></use>
+                </svg>
+                +38 096 111 11 11
+              </a>
             </li>
           </ul>
-        </nav>
-
-        <!--Kонтакы-->
-        <ul class="header__contacts">
-          <li class="header__contacts__item">
-            <a href="mailto:info@devstudio.com" class="header__contacts__link">
-              <svg class="header__contacts__icon" width="16" height="12">
-                <use href="./images/icons.svg#icon-envelope"></use>
-              </svg>
-              info@devstudio.com
-            </a>
-          </li>
-
-          <li class="header__contacts__item">
-            <a href="tel:+380961111111" class="header__contacts__link">
-              <svg class="header__contacts__icon" width="10" height="16">
-                <use href="./images/icons.svg#icon-smartphone"></use>
-              </svg>
-              +38 096 111 11 11
-            </a>
-          </li>
-        </ul>
+        </div>
       </div>
     </header>
 
@@ -105,9 +118,15 @@
               <a href="" class="card-set__link">
                 <div class="card-set__thumb">
                   <img
-                    src="./portfolio-images/tehnokryak.jpg"
-                    alt="Технокряк. Веб-сайты"
-                    width="370"
+                    class="card-set__img"
+                    srcset="
+                      ./portfolio-images/portfolio-1.jpg    1x,
+                      ./portfolio-images/portfolio-1@2x.jpg 2x
+                    "
+                    src="./portfolio-images/portfolio-1.jpg"
+                    alt="img"
+                    width="450"
+                    height="294"
                   />
                   <div class="card-overlay">
                     <p class="card-overlay__text">
@@ -129,9 +148,15 @@
               <a href="" class="card-set__link">
                 <div class="card-set__thumb">
                   <img
-                    src="./portfolio-images/poster-golden-style.jpg"
-                    alt="Постер New Orlean vs Golden Star"
-                    width="370"
+                    class="card-set__img"
+                    srcset="
+                      ./portfolio-images/portfolio-2.jpg    1x,
+                      ./portfolio-images/portfolio-2@2x.jpg 2x
+                    "
+                    src="./portfolio-images/portfolio-2.jpg"
+                    alt="img"
+                    width="450"
+                    height="294"
                   />
                   <div class="card-overlay">
                     <p class="card-overlay__text">
@@ -155,9 +180,15 @@
               <a href="" class="card-set__link">
                 <div class="card-set__thumb">
                   <img
-                    src="./portfolio-images/seafood.jpg"
-                    alt="Ресторан Seafood"
-                    width="370"
+                    class="card-set__img"
+                    srcset="
+                      ./portfolio-images/portfolio-3.jpg    1x,
+                      ./portfolio-images/portfolio-3@2x.jpg 2x
+                    "
+                    src="./portfolio-images/portfolio-3.jpg"
+                    alt="img"
+                    width="450"
+                    height="294"
                   />
                   <div class="card-overlay">
                     <p class="card-overlay__text">
@@ -179,9 +210,15 @@
               <a href="" class="card-set__link">
                 <div class="card-set__thumb">
                   <img
-                    src="./portfolio-images/prime.jpg"
-                    alt="Prime. Маркетинг"
-                    width="370"
+                    class="card-set__img"
+                    srcset="
+                      ./portfolio-images/portfolio-4.jpg    1x,
+                      ./portfolio-images/portfolio-4@2x.jpg 2x
+                    "
+                    src="./portfolio-images/portfolio-4.jpg"
+                    alt="img"
+                    width="450"
+                    height="294"
                   />
                   <div class="card-overlay">
                     <p class="card-overlay__text">
@@ -203,9 +240,15 @@
               <a href="" class="card-set__link">
                 <div class="card-set__thumb">
                   <img
-                    src="./portfolio-images/boxes.jpg"
-                    alt="Проект Boxes"
-                    width="370"
+                    class="card-set__img"
+                    srcset="
+                      ./portfolio-images/portfolio-5.jpg    1x,
+                      ./portfolio-images/portfolio-5@2x.jpg 2x
+                    "
+                    src="./portfolio-images/portfolio-5.jpg"
+                    alt="img"
+                    width="450"
+                    height="294"
                   />
                   <div class="card-overlay">
                     <p class="card-overlay__text">
@@ -227,9 +270,15 @@
               <a href="" class="card-set__link">
                 <div class="card-set__thumb">
                   <img
-                    src="./portfolio-images/inspiration.jpg"
-                    alt="Inspiration has no Borders"
-                    width="370"
+                    class="card-set__img"
+                    srcset="
+                      ./portfolio-images/portfolio-6.jpg    1x,
+                      ./portfolio-images/portfolio-6@2x.jpg 2x
+                    "
+                    src="./portfolio-images/portfolio-6.jpg"
+                    alt="img"
+                    width="450"
+                    height="294"
                   />
                   <div class="card-overlay">
                     <p class="card-overlay__text">
@@ -253,9 +302,15 @@
               <a href="" class="card-set__link">
                 <div class="card-set__thumb">
                   <img
-                    src="./portfolio-images/limited-edition.jpg"
-                    alt="Издание Limited Edition"
-                    width="370"
+                    class="card-set__img"
+                    srcset="
+                      ./portfolio-images/portfolio-7.jpg    1x,
+                      ./portfolio-images/portfolio-7@2x.jpg 2x
+                    "
+                    src="./portfolio-images/portfolio-7.jpg"
+                    alt="img"
+                    width="450"
+                    height="294"
                   />
                   <div class="card-overlay">
                     <p class="card-overlay__text">
@@ -277,9 +332,15 @@
               <a href="" class="card-set__link">
                 <div class="card-set__thumb">
                   <img
-                    src="./portfolio-images/lab.jpg"
-                    alt="Проект LAB"
-                    width="370"
+                    class="card-set__img"
+                    srcset="
+                      ./portfolio-images/portfolio-8.jpg    1x,
+                      ./portfolio-images/portfolio-8@2x.jpg 2x
+                    "
+                    src="./portfolio-images/portfolio-8.jpg"
+                    alt="img"
+                    width="450"
+                    height="294"
                   />
                   <div class="card-overlay">
                     <p class="card-overlay__text">
@@ -301,9 +362,15 @@
               <a href="" class="card-set__link">
                 <div class="card-set__thumb">
                   <img
-                    src="./portfolio-images/growing-business.jpg"
-                    alt="Growing Business"
-                    width="370"
+                    class="card-set__img"
+                    srcset="
+                      ./portfolio-images/portfolio-9.jpg    1x,
+                      ./portfolio-images/portfolio-9@2x.jpg 2x
+                    "
+                    src="./portfolio-images/portfolio-9.jpg"
+                    alt="img"
+                    width="450"
+                    height="294"
                   />
                   <div class="card-overlay">
                     <p class="card-overlay__text">
@@ -328,28 +395,19 @@
     <!-- Подвал -->
     <footer class="footer">
       <div class="container footer__container">
-        <!-- Блок с контактной информацией и лого. Создан для позиционирования элементов -->
         <div class="footer__contacts">
-          <!-- Лого -->
           <a href="./index.html" class="footer__logo">
             <span class="logo__accent-text">Web</span>Studio
           </a>
 
-          <!--Контактная информация-->
           <address class="address">
-            <!-- Физический адрес -->
-
             <a href="https://goo.gl/maps/JUrXiFq32XLz6EwXA" class="address__map"
               >г. Киев, пр-т Леси Украинки, 26</a
             >
 
-            <!-- Электронная почта -->
-
             <a href="mailto:info@devstudio.com" class="address__email"
               >info@devstudio.com</a
             >
-
-            <!-- Телефон -->
 
             <a href="tel:+380961111111" class="address__tel"
               >+38 096 111 11 11</a
@@ -357,7 +415,6 @@
           </address>
         </div>
 
-        <!-- Блок со ссылками на соц.сети -->
         <div class="footer-sn">
           <p class="footer__titles">присоединяйтесь</p>
           <ul class="footer-sn__set">
@@ -404,7 +461,6 @@
           </ul>
         </div>
 
-        <!-- Блок с подпиской на рассылку -->
         <div class="footer-subscribe">
           <form>
             <p class="footer__titles">Подпишитесь на рассылку</p>
@@ -428,5 +484,64 @@
         </div>
       </div>
     </footer>
+
+    <!-- Мобильное меню -->
+
+    <div class="menu-container js-menu-container" id="mobile-menu">
+      <button class="menu-toggle js-close-menu">
+        <svg width="40" height="40" class="icon-cross">
+          <use href="./images/icons.svg#icon-cross"></use>
+        </svg>
+      </button>
+      <div class="mobile-menu">
+        <ul class="mobile-nav">
+          <li class="mobile-nav__item">
+            <a href="./index.html" class="mobile-nav__link">Студия</a>
+          </li>
+
+          <li class="mobile-nav__item">
+            <a
+              href="./portfolio.html"
+              class="mobile-nav__link mobile-nav__link--current"
+              >Портфолио</a
+            >
+          </li>
+
+          <li class="mobile-nav__item">
+            <a href="" class="mobile-nav__link">Контакты</a>
+          </li>
+        </ul>
+
+        <ul class="mobile-contacts">
+          <li class="mobile-contacts__item">
+            <a href="mailto:info@devstudio.com" class="mobile-contacts__link">
+              info@devstudio.com
+            </a>
+          </li>
+
+          <li class="mobile-contacts__item">
+            <a href="tel:+380961111111" class="mobile-contacts__link">
+              +38 096 111 11 11
+            </a>
+          </li>
+        </ul>
+        <ul class="mobile-sn">
+          <li class="mobile-sn__item">
+            <a href="" class="mobile-sn__link">Instagram</a>
+          </li>
+          <li class="mobile-sn__item">
+            <a href="" class="mobile-sn__link">Twitter</a>
+          </li>
+          <li class="mobile-sn__item">
+            <a href="" class="mobile-sn__link">Facebook</a>
+          </li>
+          <li class="mobile-sn__item">
+            <a href="" class="mobile-sn__link">LinkedIn</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <script src="./js/mobile-menu.js"></script>
   </body>
 </html>

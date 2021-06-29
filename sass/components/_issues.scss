@@ -1,39 +1,45 @@
 /* Задачи */
 
 .issues {
-  padding-top: 94px;
-  padding-bottom: 94px;
+  display: none;
 
-  &__title {
-    @extend %section-titles;
-  }
+  @media screen and (min-width: $desktop){
+    display: block;
+    padding-top: 94px;
+    padding-bottom: 94px;
 
-  &__list {
-    display: flex;
-    flex-wrap: wrap;
+    &__title {
+      @include section-titles();
+      margin-bottom: 50px;
+    }
 
-    margin-left: -30px;
-    margin-top: -30px;
-  }
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
 
-  &__item {
-    flex-basis: calc(100% / 3 - 30px);
+      margin-left: -30px;
+      margin-top: -30px;
+    }
 
-    margin-left: 30px;
-    margin-top: 30px;
-  }
+    &__item {
+      flex-basis: calc(100% / 3 - 30px);
 
-  &__text {
-    position: absolute;
-    top: 251px;
-    white-space: nowrap;
+      margin-left: 30px;
+      margin-top: 30px;
+    }
 
-    transform: translate(-50%, 0);
-    left: 50%;
+    &__text {
+      position: absolute;
+      top: 251px;
+      white-space: nowrap;
 
-    color: $white-additional-color;
+      transform: translate(-50%, 0);
+      left: 50%;
 
-    @extend %block-titles;
+      color: $white-additional-color;
+
+      @include block-titles();
+    }
   }
 }
 

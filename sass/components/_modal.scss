@@ -1,12 +1,11 @@
 .modal {
-  @extend %position-center;
   @include transition(opacity);
   @include box-shadow();
 
   text-align: center;
 
   padding: 40px;
-  width: 528px;
+  width: 100%;
   max-height: 100vh;
 
   background-color: $main-background-color;
@@ -14,8 +13,17 @@
   overflow-y: auto;
   border-radius: 4px;
 
+  @media screen and (min-width: $mobile) {
+    @include position-center();
+    width: 450px;    
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: 528px;
+  } 
+
   &__header {
-    @extend %modal-title;
+    @include modal-title();
 
     margin-bottom: 12px;
 
@@ -36,7 +44,7 @@
   }
 
   &__text-label {
-    @extend %text-label;
+    @include text-label();
 
     color: $text-color;
   }
@@ -63,17 +71,25 @@
   padding: 11px 12px;
   padding-left: 42px;
 
-  width: 448px;
+  width: 100%;
 
   border-radius: 4px;
+
+  @media screen and (min-width: $mobile) {
+    width: 370px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: 448px;
+  }
 
   &:hover,
   &:focus {
     border-color: $accent-color;
   }
 
-  &:focus+.modal__icon,
-  &:hover+.modal__icon {
+  &:focus + .modal__icon,
+  &:hover + .modal__icon {
     fill: $accent-color;
   }
 
@@ -120,24 +136,20 @@
   clip: rect(0 0 0 0);
   overflow: hidden;
 
-  &:checked+.modal__checked-icon {
-    opacity: 100%;
-  }
-
-  &:checked~.modal__checkbox-icon {
-    opacity: 0%;
+  &:checked + .modal__checked-icon {
+    background-color: $accent-color;
+    border: none;
   }
 }
 
 .modal__checked-icon {
-  position: absolute;
-  top: 4px;
-  left: 12px;
+  min-width: 16px;
+  min-height: 15px;
 
-  background-color: $accent-color;
-  opacity: 0%;
+  border: 1px solid #000;
+  // border-radius: 4px;
 
-  @include transition(opacity);
+  @include transition(background-color);
 }
 
 .modal__checkbox-icon {
@@ -152,13 +164,19 @@
   margin-left: 8px;
   text-align: center;
 
-  @extend %text-section;
+  @include text-section();
+  font-size: 12px;
+  line-height: 1.16;
 
   color: $text-color;
+
+  @media screen and (min-width: $desktop) {
+    @include text-section();
+  }
 }
 
 .modal__link {
-  Text-decoration-line: underline;
+  text-decoration-line: underline;
 
   color: $accent-color;
 }
